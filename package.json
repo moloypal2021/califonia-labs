@@ -1,0 +1,24 @@
+{
+  "name": "califonia-labs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "tailwindcss -i ./tailwind.css -o ./public/assets/css/tailwind.css --watch",
+    "build": "tailwindcss -i ./tailwind.css -o ./public/assets/css/tailwind.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moloypal2021/califonia-labs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/moloypal2021/califonia-labs/issues"
+  },
+  "homepage": "https://github.com/moloypal2021/califonia-labs#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.1.6"
+  }
+}

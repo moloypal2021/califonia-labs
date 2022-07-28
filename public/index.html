@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Tailwind.css -->
+    <link rel="stylesheet" href="./assets/css/tailwind.css">
+
+    <!-- Alpine.js -->
+    <script defer src="https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js"></script>
+</head>
+
+<body>
+    <div class="bg-dark-bg">
+        <!-- Header Section Start -->
+        <header class="container py-4" x-data="{navOpen : true}">
+            <nav class="flex items-center justify-between">
+                <div class="lg:inline-block hidden">
+                    <a href="#" class="inline-block"><img src="./assets/images/logo.svg" alt=""
+                            class="sm:w-36 md:w-40 xl:w-[198px]"></a>
+                </div>
+                <div class="flex flex-col w-full lg:w-auto">
+
+                    <!-- Small Screen Menus -->
+                    <div class="lg:hidden flex items-center justify-between w-full">
+                        <button class="" @click="navOpen = !navOpen">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect x="1" y="1" width="38" height="38" rx="19" fill="white" />
+                                <rect x="10" y="16" width="20" height="2" rx="1" fill="black" />
+                                <rect x="10" y="22" width="20" height="2" rx="1" fill="black" />
+                                <rect x="1" y="1" width="38" height="38" rx="19" stroke="#E4E4E4" stroke-width="2" />
+                            </svg>
+                        </button>
+                        <button class="">
+                            <svg class="rounded-full w-10 h-10" width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect x="1" y="1" width="38" height="38" rx="19" fill="white" />
+                                <rect width="40" height="40" rx="5" fill="white" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M20.0007 12C17.7918 12 16.0007 13.7911 16.0007 16C16.0007 18.3053 17.8509 20.6667 20.0007 20.6667C22.1504 20.6667 24.0007 18.3053 24.0007 16C24.0007 13.7911 22.2095 12 20.0007 12ZM20.0007 13.3333C21.4731 13.3333 22.6673 14.5275 22.6673 16C22.6673 17.6303 21.333 19.3333 20.0007 19.3333C18.6683 19.3333 17.334 17.6303 17.334 16C17.334 14.5275 18.5282 13.3333 20.0007 13.3333ZM26.6673 26C26.6673 23.4225 24.5782 21.3333 22.0007 21.3333H18.0007C15.4231 21.3333 13.334 23.4225 13.334 26V27.1533L13.7975 27.3016C14.0884 27.3947 14.633 27.5274 15.4234 27.6578C16.7219 27.872 18.2503 28 20.0007 28C21.751 28 23.2794 27.872 24.5779 27.6578L24.9252 27.5976C25.5299 27.4875 25.9577 27.3804 26.2038 27.3016L26.6673 27.1533V26ZM22.0007 22.6667L22.1453 22.6697C23.9193 22.7454 25.334 24.2073 25.334 26V26.1513L25.1314 26.1973C24.9014 26.2466 24.6445 26.2954 24.3609 26.3422C23.1333 26.5447 21.6774 26.6667 20.0007 26.6667C18.3239 26.6667 16.868 26.5447 15.6404 26.3422L15.4327 26.3068C15.2976 26.2829 15.1692 26.2587 15.0475 26.2342L14.6673 26.152V26C14.6673 24.1589 16.1595 22.6667 18.0007 22.6667H22.0007Z"
+                                    fill="black" />
+                                <rect x="1" y="1" width="38" height="38" rx="19" stroke="#E4E4E4" stroke-width="2" />
+                            </svg>
+
+                        </button>
+                    </div>
+
+                    <!-- Menus Start -->
+                    <div class="flex-col lg:flex-row items-center lg:space-x-6 space-y-4 lg:space-y-0 w-full py-6 lg:py-0"
+                        :class="navOpen ? 'flex' : 'hidden lg:flex' ">
+                        <div class="relative block lg:inline-block text-left w-full" x-data="{open:false}"
+                            @click.away="open = false">
+                            <div class="w-full lg:w-auto">
+                                <button type="button"
+                                    class="flex lg:inline-flex justify-between w-full text-sm md:text-base font-semibold text-white hover:text-accent-1 whitespace-nowrap"
+                                    @click="open = !open">
+                                    Services
+                                    <svg class="w-6" viewBox="0 0 25 24" fill="currentColor"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M16.8244 8.58594L18.2386 10.0002L12.8244 15.4144L7.41016 10.0002L8.82437 8.58594L12.8244 12.5852L16.8244 8.58594Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="origin-top lg:origin-top-right lg:absolute right-0 mt-2 w-full lg:w-56 rounded-md shadow-lg lg:bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                                x-show="open" x-transition:enter="transition ease-out duration-300"
+                                x-transition:enter-start="opacity-0 lg:scale-90"
+                                x-transition:enter-end="opacity-100 scale-100"
+                                x-transition:leave="transition ease-in duration-300"
+                                x-transition:leave-start="opacity-100 scale-100"
+                                x-transition:leave-end="opacity-0 lg:scale-90">
+                                <div class="py-1" role="none">
+                                    <a href="#" class="text-gray-100 lg:text-gray-700 block px-4 py-2 text-sm">Account
+                                        settings</a>
+                                    <a href="#"
+                                        class="text-gray-100 lg:text-gray-700 block px-4 py-2 text-sm">Support</a>
+                                    <a href="#"
+                                        class="text-gray-100 lg:text-gray-700 block px-4 py-2 text-sm">License</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="relative block lg:inline-block text-left w-full" x-data="{open:false}"
+                            @click.away="open = false">
+                            <div class="w-full lg:w-auto">
+                                <button type="button"
+                                    class="flex lg:inline-flex justify-between w-full text-sm md:text-base font-semibold text-accent-1 whitespace-nowrap"
+                                    @click="open = !open">
+                                    Success Stories
+                                    <svg class="w-6" viewBox="0 0 25 24" fill="currentColor"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M16.8244 8.58594L18.2386 10.0002L12.8244 15.4144L7.41016 10.0002L8.82437 8.58594L12.8244 12.5852L16.8244 8.58594Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="origin-top lg:origin-top-right lg:absolute right-0 mt-2 w-full lg:w-56 rounded-md shadow-lg lg:bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                                x-show="open" x-transition:enter="transition ease-out duration-300"
+                                x-transition:enter-start="opacity-0 lg:scale-90"
+                                x-transition:enter-end="opacity-100 scale-100"
+                                x-transition:leave="transition ease-in duration-300"
+                                x-transition:leave-start="opacity-100 scale-100"
+                                x-transition:leave-end="opacity-0 lg:scale-90">
+                                <div class="py-1" role="none">
+                                    <a href="#" class="text-gray-100 lg:text-gray-700 block px-4 py-2 text-sm">Account
+                                        settings</a>
+                                    <a href="#"
+                                        class="text-gray-100 lg:text-gray-700 block px-4 py-2 text-sm">Support</a>
+                                    <a href="#"
+                                        class="text-gray-100 lg:text-gray-700 block px-4 py-2 text-sm">License</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="block lg:inline-block w-full">
+                            <a href="#"
+                                class="w-full text-sm md:text-base font-semibold text-white whitespace-nowrap">About
+                                Us</a>
+                        </div>
+
+                        <div class="block lg:inline-block w-full">
+                            <a href="#"
+                                class="w-full text-sm md:text-base font-semibold text-dark-1 hover:text-white px-6 py-2 rounded-full bg-accent-1 block lg:inline-block text-center whitespace-nowrap transition-all">Get
+                                in Touch</a>
+                        </div>
+                    </div>
+                    <!-- Menus End -->
+                </div>
+            </nav>
+        </header>
+        <!-- Header Section End -->
+
+    </div>
+</body>
+
+</html>
