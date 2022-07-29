@@ -604,6 +604,10 @@ body{
   }
 }
 
+.fixed{
+  position: fixed;
+}
+
 .absolute{
   position: absolute;
 }
@@ -619,6 +623,11 @@ body{
   left: 0px;
 }
 
+.inset-x-0{
+  left: 0px;
+  right: 0px;
+}
+
 .right-0{
   right: 0px;
 }
@@ -629,6 +638,10 @@ body{
 
 .z-10{
   z-index: 10;
+}
+
+.z-50{
+  z-index: 50;
 }
 
 .mx-auto{
@@ -695,6 +708,14 @@ body{
 
 .mb-10{
   margin-bottom: 2.5rem;
+}
+
+.mt-\[92px\]{
+  margin-top: 92px;
+}
+
+.mt-24{
+  margin-top: 6rem;
 }
 
 .block{
@@ -1007,6 +1028,11 @@ body{
   padding-right: 1.5rem;
 }
 
+.py-3{
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
 .pt-24{
   padding-top: 6rem;
 }
@@ -1249,10 +1275,6 @@ body{
 
   .md\:flex-row{
     flex-direction: row;
-  }
-
-  .md\:justify-center{
-    justify-content: center;
   }
 
   .md\:justify-between{
